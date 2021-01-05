@@ -20,6 +20,10 @@ Hmm... So, enough of the theory. Lets pull ourselves on the Problems and try to 
 
 ### Problem 1 : Activity Selection Problem
 
+**Problem Statement :**
+Given n activities with their start and finish times. 
+Assuming, worker is working on single activity at a time, select the maximum number of activities that can be performed by a single person.
+
 **Algorithm Type :** Greedy Algorithm
 
 
