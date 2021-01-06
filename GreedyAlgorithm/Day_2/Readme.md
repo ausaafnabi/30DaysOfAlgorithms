@@ -25,7 +25,6 @@ What would be the minimum number of coins and/or notes needed to make the change
 **Solution:**
 
 ```python3
-
 def minCoins(currency):
   num = len(currency.deno)
   changeOfValue = []
@@ -39,7 +38,57 @@ def minCoins(currency):
       i -=1
 
   return changeOfValue 
+
 ```
 **TimeComplexity :** O(nlogn)
+
+
+### Problem 2 : Fractional Knapsack Problem
+
+**Problem Statement :**
+Given weights and values of N items, Put Items in a knapsack of capacity W to get the maximum total value in the knapsack.
+
+**Algorithm Type :** Greedy Algorithm
+
+**Problem Complexity :** Medium
+
+**Steps :**
+`
+  - Sort Items on basis of ratio.
+  - Initialize total value as empty.
+  - loop through all items.
+  - if added Item won't overflow, add them.
+  - elseif current Item overflows, add fraction of the item.
+  - return totalValue
+`
+
+**Solution:**
+
+```python3
+def getMaxValue(wt,val,capacity):
+    '''function to get maximum value'''
+    iVal = []
+    for i in range(len(wt)):
+        iVal.append(ItemValue(wt[i],val[i],i))
+    
+    #sort in reverse by value
+    iVal.sort(reverse=True)
+
+    totalVal = 0
+    for i in iVal:
+        curWt = int(i.wt)
+        curVal = int(i.val)
+        if capacity - curWt >= 0:
+            capacity -= curWt
+            totalVal += curVal
+        else:
+            fraction = capacity/curWt
+            totalVal += curVal * fraction
+            capacity = int(capacity - (curWt*fraction))
+            break
+    return totalVal 
+```
+**TimeComplexity :** O(nlogn)
+
 
 
