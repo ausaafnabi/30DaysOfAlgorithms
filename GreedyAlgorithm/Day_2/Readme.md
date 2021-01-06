@@ -91,4 +91,51 @@ def getMaxValue(wt,val,capacity):
 **TimeComplexity :** O(nlogn)
 
 
+### Problem 3 : Job Sequencing Problem
+
+**Problem Statement :**
+Given an array of jobs where every job has a deadline and associated profit if the job is finished before the deadline.
+Maximize total profit if only one job can be scheduled at a time.
+
+
+**Algorithm Type :** Greedy Algorithm
+
+**Problem Complexity :** Medium
+
+**Steps :**
+`
+- Sort all jobs in decreasing order of profit. 
+- Iterate on jobs in decreasing order of profit.For each job , do the following : 
+  - Find a time slot i, such that slot is empty and i < deadline and i is greatest. Put the job in this slot and mark this slot filled. 
+  - If no such i exists, then ignore the job.
+`
+
+**Solution:**
+
+```python3
+def JobScheduling(jobs,t):
+    n = len(jobs)
+
+    # Sort all jobs acc. to
+    # Decreasing order of the Profit
+    #
+    jobs.sort(reverse=True)
+
+    result = [False] * t
+
+    jobSq = ['-1'] * t
+
+    for i in range(n):
+        #Find a free slot for this job
+        # (Start from last possible slot)
+        for j in range(min(t-1,jobs[i].deadline-1),-1,-1):
+            if result[j] is False:
+                result[j] = True
+                jobSq[j] = jobs[i].jobID 
+                break
+    return jobSq 
+```
+**TimeComplexity :** O(n^2)
+
+
 
