@@ -29,3 +29,14 @@ Problems in Solved in Day 1:
 
 **READ :** [Day 1 Complete Readme!](../Day_1/Readme.md "Day 1 Complete Reference")
 
+### Day 2:
+
+Problems in Solved in Day 2:
+ - **Problem 1 : Minimized Coins Problem**
+
+ - **Problem 2 : Fractional Knapsack Problem**
+
+ - **Problem 3 : Job Sequencing Problem** 
+
+**READ :** [Day 2 Complete Readme!](../Day_2/Readme.md "Day 2 Complete Reference")
+
