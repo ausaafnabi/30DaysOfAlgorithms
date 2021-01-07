@@ -34,3 +34,12 @@ Covering the Algorithms in 30 days. Ranging from
   - Job Sequencing
 [Readme for Day 2!](../GreedyAlgorithm/Day_2/Readme.md "Day 2 Complete Reference")
 
+**Day 3 :**
+- Documented Algorithms
+- Algorithm :
+  - Minimum Stations Problem
+  - Graph Coloring Problem
+  - Minimum CashFlow Problem
+[Readme for Day 3!](../GreedyAlgorithm/Day_3/Readme.md "Day 3 Complete Reference")
+
+

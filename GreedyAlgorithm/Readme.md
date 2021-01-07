@@ -21,6 +21,7 @@ Hmm... So, enough of the theory. Lets pull ourselves on the Problems and try to 
 ### Day 1:
 
 Problems in Solved in Day 1:
+
  - **Problem 1 : Activity Selection Problem**
 
  - **Problem 2 : Minimum Spanning Tree Problem**
@@ -32,6 +33,7 @@ Problems in Solved in Day 1:
 ### Day 2:
 
 Problems in Solved in Day 2:
+
  - **Problem 1 : Minimized Coins Problem**
 
  - **Problem 2 : Fractional Knapsack Problem**
@@ -39,4 +41,15 @@ Problems in Solved in Day 2:
  - **Problem 3 : Job Sequencing Problem** 
 
 **READ :** [Day 2 Complete Readme!](../Day_2/Readme.md "Day 2 Complete Reference")
+
+### Day 3:
+
+Problems in Solved in Day 3:
+ - **Problem 1 : Minimium Stations Problem**
+
+ - **Problem 2 : Graph Coloring Problem**
+
+ - **Problem 3 : Minimum CashFlow Problem** 
+
+**READ :** [Day 3 Complete Readme!](../Day_3/Readme.md "Day 3 Complete Reference")
 
