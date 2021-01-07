@@ -30,14 +30,35 @@ Find the minimum number of platforms required for the railway station so that no
 **Solution:**
 
 ```python3
-
+def findPlatform(Station):
+    n = len(Station)
+    Station.sort()
+    plat_needed = 1
+    result = 1
+    i=1 
+    j=0
+    while(i<n and j<n):
+        if (Station[i].arr<=Station[j].dep):
+            plat_needed +=1
+            i +=1
+        elif(Station[i].arr > Station[j].dep):
+            plat_needed -= 1
+            j += 1
+        
+        if (plat_needed > result):
+            result = plat_needed
+    return result
 ```
 **TimeComplexity :** O(nlogn)
 
 
-### Problem 2 : 
+### Problem 2 : Graph Coloring Problem
 
 **Problem Statement :**
+Given m colors, find a way of coloring the vertices of a graph such that no two adjacent vertices are colored using same color. 
+
+NOTE: Graph Coloring is a NP-Complete Problem. Hence, There is no efficient Solution available. Approximate algorithms are used to solve it though. Greedy Algorithm gurantees that the upper bound is never more than d+1. where d is maximum degree of vertex 
+
 
 **Algorithm Type :** Greedy Algorithm
 
@@ -45,13 +66,42 @@ Find the minimum number of platforms required for the railway station so that no
 
 **Steps :**
 `
+1. Color first vertex with first color.
+2. Do following for remaining V-1 vertices.
+  - Consider the currently picked vertex and color it with the
+lowest numbered color that has not been used on any previously
+colored vertices adjacent to it. 
+  - If all previously used colors appear on vertices adjacent to v,
+    - assign a new color to it.
 `
 
 **Solution:**
 
 ```python3
+def colorGraph(graph,colors,N):
+    # stores color assigned to each V
+    result = {}
+    
+    # assign color to V one by one
+    for u in range(N):
+        # set to store color of adj vertices of u
+        # check color of adj of u and store in set
+        assigned = set([result.get(i) for i in graph.adj[u] if i in result])
+        # check for the first free color
+        color = 1
+        for c in assigned:
+            if color != c:
+                break
+            color = color + 1
+        #assigns vertex u the first available color
+        result[u] = color
+    
+    for v in range(N):
+        print("Color assigned to vertex",v,"is",colors[result[v]])
+
+
 ```
-**TimeComplexity :** O(nlogn)
+**TimeComplexity :** O(V^2+E), where V and E are vertex and edges.
 
 
 ### Problem 3 : 
