@@ -42,4 +42,12 @@ Covering the Algorithms in 30 days. Ranging from
   - Minimum CashFlow Problem
 [Readme for Day 3!](../GreedyAlgorithm/Day_3/Readme.md "Day 3 Complete Reference")
 
+**Day 4 :**
+- Documented Algorithms
+- Algorithm :
+  - N Ropes Problem
+  - Shortest Path Problem
+  - Minimum Spanning Tree Problem for Dense Trees
+[Readme for Day 4!](../GreedyAlgorithm/Day_4/Readme.md "Day 4 Complete Reference")
+
 

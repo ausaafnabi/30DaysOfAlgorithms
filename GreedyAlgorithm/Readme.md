@@ -53,3 +53,14 @@ Problems in Solved in Day 3:
 
 **READ :** [Day 3 Complete Readme!](../Day_3/Readme.md "Day 3 Complete Reference")
 
+### Day 4:
+
+Problems in Solved in Day 4:
+ - **Problem 1 : N Ropes Problem**
+
+ - **Problem 2 : Shortest Path Problem**
+
+ - **Problem 3 : Minimum Spanning Tree Problem For Dense Graphs** 
+
+**READ :** [Day 4 Complete Readme!](../Day_4/Readme.md "Day 4 Complete Reference")
+

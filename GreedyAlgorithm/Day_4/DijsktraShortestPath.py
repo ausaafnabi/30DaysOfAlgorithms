@@ -30,7 +30,7 @@ class Graph():
         return min_index
     
     #Function to implement Dijkstra
-    def dijkastra(self,src):
+    def dijkstra(self,src):
         dist = [maxint] * self.V
         dist[src] = 0
         sptSet = [False]* self.V
@@ -61,6 +61,6 @@ if __name__ == "__main__":
                 [8,11,0,0,0,0,1,0,7],
                 [0,0,2,0,0,0,6,7,0],
               ]
-    g.dijkastra(0);
+    g.dijkstra(0);
 
 
