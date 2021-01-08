@@ -1,4 +1,4 @@
-# DAY 2 
+# DAY 3 
 
 ## PROBLEMS : 
 
