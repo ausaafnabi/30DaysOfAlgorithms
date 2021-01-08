@@ -50,8 +50,10 @@ def minCost(ropes):
 ### Problem 2 : Shortest Path Problem
 
 **Problem Statement :**
-
-
+Given a graph and a source vertex in the graph, find shortest paths from source to all vertices in the given graph.
+We'll use Dijkstra’s algorithm to find shortest path .In which, we generate a SPT (shortest path tree) with given source as root. We maintain two sets, one set contains vertices included in shortest path tree, other set includes vertices not yet included in shortest path tree. At every step of the algorithm, we find a vertex which is in the other set (set of not yet included) and has a minimum distance from the source.
+ NOTE: if we use Adjecency List then we can decrease the complexity to O(ELogV). Also, Check Dial's algorithm which is a more efficient algorithm for SPT.
+ 
 **Algorithm Type :** Greedy Algorithm
 
 **Problem Complexity :** Medium
@@ -69,7 +71,7 @@ def minCost(ropes):
 **Solution:**
 
 ```python3
-#Function to implement Dijkstra
+
 def dijkstra(self,src):
     dist = [maxint] * self.V
     dist[src] = 0
@@ -86,7 +88,6 @@ def dijkstra(self,src):
             if self.graph[u][v] > 0 and sptSet[v] == False and \
             dist[v] > dist[u] + self.graph[u][v]:
                 dist[v] = dist[u] + self.graph[u][v]
-
     self.printSolution(dist)
 ```
 
@@ -96,20 +97,50 @@ def dijkstra(self,src):
 ### Problem 3 : Minimum Spanning Tree  Problem
 
 **Problem Statement :**
-
+Using Prims Algorithm, find the MST of a given graph.
+ 
 **Algorithm Type :** Greedy Algorithm
 
 **Problem Complexity :** HARD 
 
 **Steps :**
 `
+1. Create a Priority Queue of size V where V is the number of vertices in the given graph. Every node of min heap contains vertex number and key value of the vertex.
+2. Initialize the first vertex as root (the key value assigned to first vertex is 0). The key value assigned to all other vertices is INF (infinite).
+3. While Priority Queue is not empty, do following
+  - Extract the min value node from Priority Queue. Let the extracted vertex be u.
+  - For every adjacent vertex v of u, check if v is in Priority Queue (not yet included in MST). 
+    - If v is in Priority Queue and its key value is more than weight of u-v, 
+    - then update the key value of v as weight of u-v.
 `
+
 **Solution:**
 
 ```python3
+def create_spanning_tree(graph, starting_vertex):
+    mst = defaultdict(set)
+    visited = set([starting_vertex])
+    edges = [
+        (cost, starting_vertex, to)
+        for to, cost in graph[starting_vertex].items()
+    ]
+    heapq.heapify(edges)
+
+    while edges:
+        cost, frm, to = heapq.heappop(edges)
+        if to not in visited:
+            visited.add(to)
+            mst[frm].add(to)
+            for to_next, cost in graph[to].items():
+                if to_next not in visited:
+                    heapq.heappush(edges, (cost, to, to_next))
+
+    return mst
+
 ```
 
 
-**TimeComplexity :** O(n^2)
+**TimeComplexity :** O(VLogE), where V and E are vertices and edges respectively.
+
 
 
