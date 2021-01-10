@@ -117,17 +117,47 @@ def strassen(x,y):
 ### Problem 3 : Coolie-Turkey FFT
 
 **Problem Statement :**
-
+Compute and Visualize Discrete Fourier Transform. The algorithm shall work under nlogn complexity
 
 **Algorithm Type :** Divide and Conquer Algorithm
 
 **Problem Complexity :** HARD
 
+**Steps :**
+`
+Recursively re-express a DFT of a composite size N = N1 * N2 as:
+- Perform N1 DFTs of size N2.
+- Multiply by complex roots of unity (often called the twiddle factors).
+- Perform N2 DFTs of size N1
+`
 
 **Solution:**
 
 ```python3
+def fft(x):
+    X = list()
+    for k in range(0, N):
+        window = 1 # np.sin(np.pi * (k+0.5)/N)**2
+        X.append(np.complex(x[k] * window, 0))
 
+    fft_rec(X)
+    return X
+
+def fft_rec(X):
+    N = len(X)
+
+    if N <= 1:
+        return
+
+    even = np.array(X[0:N:2])
+    odd = np.array(X[1:N:2])
+
+    fft_rec(even)
+    fft_rec(odd)
+    for k in range(0, int(N/2)):
+        t = np.exp(np.complex(0, -2 * np.pi * k / N)) * odd[k]
+        X[k] = even[k] + t
+        X[int(N/2 + k)] = even[k] - t
 ```
 **TimeComplexity :** O(nlogn)
 
