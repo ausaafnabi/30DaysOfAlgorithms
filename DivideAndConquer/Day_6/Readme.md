@@ -113,9 +113,10 @@ def karatsuba(x,y):
 **TimeComplexity :** O(n^log3)
 
 
-### Problem 3 : Quick Sort
+### Problem 3 : Skyline Problem
 
 **Problem Statement :**
+Given n rectangular buildings in a 2-dimensional city, computes the skyline of these buildings, eliminating hidden lines. The main task is to view buildings from a side and remove all sections that are not visible.
 
 **Algorithm Type :** Divide and Conquer Algorithm
 
@@ -123,12 +124,14 @@ def karatsuba(x,y):
 
 **Steps**
 `
+- start from first strips of two skylines, 
+    - compare x coordinates. 
+    - Pick the strip with smaller x coordinate and add it to result. 
+- The height of added strip is considered as maximum of current heights from skyline1 and skyline2.
 `
 
 **Solution:**
-
-```python3
-```
+See the class in SkylineProblem.py
 
 **TimeComplexity :** O(nlogn)
 
