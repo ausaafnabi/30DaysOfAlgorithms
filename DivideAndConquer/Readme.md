@@ -47,5 +47,17 @@ Problems in Solved in Day 5:
 
 **READ :** [Day 5 Complete Readme!](../Day_5/Readme.md "Day 5 Complete Reference")
 
+### Day 6:
+
+Problems in Solved in Day 5:
+
+ - **Problem 1 : Quick Sort **
+
+ - **Problem 2 : karatsuba Fast Multiplication**
+
+ - **Problem 3 : SkylineProblem** 
+
+**READ :** [Day 6 Complete Readme!](../Day_6/Readme.md "Day 6 Complete Reference")
+
 
 
