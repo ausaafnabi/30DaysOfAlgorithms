@@ -94,7 +94,7 @@ def catalan(n):
     return catalan[n] 
 ```
 
-**TimeComplexity :** O(nlogn)
+**TimeComplexity :** O(n)
 
 
 ### Problem 3 : Assign Unique Cap 
